@@ -13,6 +13,10 @@
     <button
         class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
     >
-        <a href="www.youtube.com">Buttoin</a>
+        <a
+            target="_blank"
+            href="https://medlemskap.nif.no/Start/Index/427950"
+            rel="noreferrer">Bli med!</a
+        >
     </button>
 </div>

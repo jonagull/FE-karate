@@ -1,9 +1,14 @@
 <script>
     import "../app.css";
     import { PathNames } from "../constants/pathNames.enum";
+    import ContactModal from "../components/ContactModal.svelte";
+
+    let showModal = false;
 </script>
 
-<nav class="flex px-4 border-b md:shadow-lg items-center relative">
+<!-- <button on:click={() => (showModal = true)}> show modal </button> -->
+
+<nav class="flex px-4 border-b md:shadow-lg items-center relative fixed top-0">
     <div class="text-lg font-bold md:py-0 py-4">Sentrum Karate</div>
     <ul
         class="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0"
@@ -22,6 +27,14 @@
                 class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
             >
                 <span>Trening</span>
+            </a>
+        </li>
+        <li>
+            <a
+                href="/club"
+                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
+            >
+                <span>Klubben</span>
             </a>
         </li>
         <li class="relative parent">
@@ -67,14 +80,6 @@
                 <span>Trenere</span>
             </a>
         </li>
-        <li>
-            <a
-                href="/club"
-                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
-            >
-                <span>Klubben</span>
-            </a>
-        </li>
     </ul>
     <div class="ml-auto md:hidden text-gray-500 cursor-pointer">
         <svg
@@ -88,54 +93,64 @@
     </div>
 </nav>
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center mt-5">
     <slot />
 </div>
 
-<!-- <nav>
-    <a href={PathNames.Home}>Hjem</a>
-    <a href={"/" + PathNames.Training}>Trening</a>
-    <a href={"/" + PathNames.Club}>Klubben</a>
-</nav> -->
+<ContactModal bind:showModal>
+    <h2 slot="header">Kontakt informasjon</h2>
 
-<!-- component -->
-<!-- <nav class="bg-white shadow dark:bg-gray-800">
-    <div
-        class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300"
+    <ol class="definition-list">
+        <li>of or relating to modality in logic</li>
+        <li>
+            containing provisions as to the mode of procedure or the manner of
+            taking effect —used of a contract or legacy
+        </li>
+        <li>of or relating to a musical mode</li>
+        <li>of or relating to structure as opposed to substance</li>
+        <li>
+            of, relating to, or constituting a grammatical form or category
+            characteristically indicating predication
+        </li>
+        <li>of or relating to a statistical mode</li>
+    </ol>
+</ContactModal>
+
+<footer
+    class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6"
+>
+    <span class="text-sm text-gray-500 sm:text-center"
+        >© 2023 <a
+            target="_blank"
+            href="https://jonathangulliksen.no/"
+            class="hover:underline"
+            rel="noreferrer">Gulliksen Media™</a
+        >
+    </span>
+    <ul
+        class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0"
     >
-        <a
-            href="/"
-            class="text-gray-800 dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6"
-            >Hjem</a
-        >
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">Om oss</a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">94855321</a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6"
+                >Havnegata 9, 4250 Kopervik</a
+            >
+        </li>
+        <li>
+            <a
+                href="#"
+                on:click={() => (showModal = true)}
+                class="hover:underline">Kontakt</a
+            >
+        </li>
+    </ul>
+</footer>
 
-        <a
-            href={"/" + PathNames.Training}
-            class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
-            >Trening</a
-        >
-
-        <a
-            href={"/" + PathNames.Club}
-            class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
-            >Klubben</a
-        >
-
-        <a
-            href="/historie"
-            class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
-            >Historie</a
-        >
-
-        <a
-            href="/blog"
-            class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
-            >Blog</a
-        >
-    </div>
-</nav> -->
-
-<!-- component -->
 <style>
     @media only screen and (min-width: 768px) {
         .parent:hover .child {
