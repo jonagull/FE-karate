@@ -16,7 +16,7 @@ export const load = (async ({ params }) => {
             content: pageData.data.attributes.text,
             mutatedMarkup: mutatedMarkup,
             pageData: pageData,
-            sideBar: sideBarData,
+            sideBar: sideBarData || [],
         };
     }
 
