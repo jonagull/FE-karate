@@ -1,16 +1,17 @@
 <script lang="ts">
     import type { PageData } from "./$types";
     import Sidebar from "../../components/Sidebar.svelte";
-    import { PathNames } from "../../constants/pathNames.enum";
+    import { PathNames, SingularSlugs } from "../../constants/pathNames.enum";
     import BeltTable from "../../components/BeltTable.svelte";
+    import Posts from "../../components/Posts.svelte";
 
     export let data: PageData;
-    $: hasDataList = "dataList" in data;
+    $: hasTrainers = "trainers" in data;
 </script>
 
-{#if hasDataList && data.dataList}
+{#if hasTrainers && data.trainers}
     <div class="grid grid-cols-2 gap-2">
-        {#each data.dataList as x}
+        {#each data.trainers as x}
             <div class="card card-side bg-base-100 shadow-xl m-10">
                 <figure>
                     <img class="w-40" src={x.picture} alt="Movie" />
@@ -24,7 +25,7 @@
     </div>
 {/if}
 
-{#if !hasDataList && data.slug !== PathNames.Belts}
+{#if SingularSlugs.includes(data.slug)}
     <div class="flex">
         <div>
             {#if data.sideBar}
@@ -48,4 +49,8 @@
             <BeltTable />
         </div>
     </article>
+{/if}
+
+{#if data.slug === PathNames.Posts}
+    <Posts posts={data.posts} />
 {/if}

@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
-import { PathNames } from "../../constants/pathNames.enum";
+import { PathNames, SingularSlugs } from "../../constants/pathNames.enum";
 import { AUTH_TOKEN, BASE_URL } from "../../constants/variables";
 
 let pageData: Lol;
@@ -15,7 +15,7 @@ export const load = (async ({ params }) => {
             content: pageData.data.attributes.text,
             mutatedMarkup: mutatedMarkup,
             pageData: pageData,
-            path: params.slug,
+            slug: params.slug,
             sideBar: sideBarData,
         };
     }
@@ -28,7 +28,7 @@ export const load = (async ({ params }) => {
             content: pageData.data.attributes.text,
             mutatedMarkup: mutatedMarkup,
             pageData: pageData,
-            path: params.slug,
+            slug: params.slug,
             sideBar: sideBarData,
         };
     }
@@ -58,7 +58,7 @@ export const load = (async ({ params }) => {
         ];
 
         return {
-            dataList: data || null,
+            trainers: data,
             slug: params.slug,
         };
     }
@@ -75,6 +75,15 @@ export const load = (async ({ params }) => {
         return {
             title: pageData.data.attributes.title,
             content: pageData.data.attributes.text,
+            slug: params.slug,
+        };
+    }
+
+    if (params.slug === PathNames.Posts) {
+        await fetchPageData(params.slug);
+
+        return {
+            posts: pageData.data || [],
             slug: params.slug,
         };
     }
@@ -107,7 +116,10 @@ const fetchPageData = async (endpoint: string) => {
         },
     });
     pageData = await res.json();
-    htmlParser(pageData);
+
+    if (SingularSlugs.includes(endpoint as PathNames)) {
+        htmlParser(pageData);
+    }
 };
 
 const htmlParser = (pD: any): void => {

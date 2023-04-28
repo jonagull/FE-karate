@@ -1,6 +1,6 @@
 <nav class="flex px-4 border-b md:shadow-lg items-center relative fixed top-0">
     <div class="text-lg font-bold md:py-0 py-4">
-        <a href="/"> Sentrum Karate</a>
+        <a href="/">Sentrum Karate</a>
     </div>
     <ul
         class="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0"
@@ -15,6 +15,14 @@
         </li>
         <li>
             <a
+                href="/club"
+                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
+            >
+                <span>Blog</span>
+            </a>
+        </li>
+        <li>
+            <a
                 href="/training"
                 class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
             >
@@ -23,10 +31,10 @@
         </li>
         <li>
             <a
-                href="/club"
+                href="/posts"
                 class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
             >
-                <span>Klubben</span>
+                <span>Nyheter</span>
             </a>
         </li>
         <li class="relative parent">
@@ -67,7 +75,7 @@
                 href="#"
                 class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2"
             >
-                <span>Stab</span>
+                <span>Klubben</span>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-4 h-4 fill-current pt-1"
@@ -82,7 +90,7 @@
             >
                 <li>
                     <a href="/trainers" class="flex px-4 py-3 hover:bg-gray-50">
-                        Trenere
+                        Instruktører
                     </a>
                 </li>
                 <li>
