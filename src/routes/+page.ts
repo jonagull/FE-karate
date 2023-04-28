@@ -11,7 +11,7 @@ const fetchPageData = async (endpoint: string) => {
     pageData = await res.json();
 };
 
-export const load = async ({ params }) => {
+export const load = async () => {
     await fetchPageData("home");
 
     if (!pageData) {
