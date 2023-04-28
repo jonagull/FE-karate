@@ -52,5 +52,9 @@
 {/if}
 
 {#if data.slug === PathNames.Posts}
-    <Posts posts={data.posts} />
+    <Posts list={data} />
+{/if}
+
+{#if data.slug === PathNames.Competitions}
+    <Posts list={data} />
 {/if}

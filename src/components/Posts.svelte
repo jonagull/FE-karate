@@ -1,13 +1,15 @@
 <script lang="ts">
     import { formatDate } from "../helpers/helpers";
 
-    export let posts: Data[];
+    export let list: any;
+
+    $: hasPosts = "posts" in list;
 </script>
 
-{#if posts}
-    {#each posts as p}
+{#if list}
+    {#each hasPosts ? list.posts : list.competitions as p}
         <div class="flex">
-            <a href="/post/{p.id}"
+            <a href={hasPosts ? `/post/${p.id}` : `/competition/${p.id}`}
                 >{`${p.id} - ${p.attributes.title} - ${formatDate(
                     p.attributes.createdAt || ""
                 )}`}</a

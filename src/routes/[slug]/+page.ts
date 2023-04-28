@@ -91,17 +91,8 @@ export const load = (async ({ params }) => {
     if (params.slug === PathNames.Competitions) {
         await fetchPageData(params.slug);
 
-        const competitions = [
-            {
-                title: "",
-                text: "",
-            },
-        ];
-
         return {
-            title: pageData.data.attributes.title,
-            content: pageData.data.attributes.text,
-            competitions: competitions,
+            competitions: pageData.data,
             slug: params.slug,
         };
     }

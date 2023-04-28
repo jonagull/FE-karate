@@ -20,4 +20,5 @@ export const CollectionSlugs = [
     PathNames.Posts,
     PathNames.Belts,
     PathNames.Boardmembers,
+    PathNames.Competitions,
 ];

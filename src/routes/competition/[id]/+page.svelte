@@ -4,4 +4,11 @@
     export let data: PageData;
 </script>
 
-<h1>{data.id}</h1>
+{#if data}
+    <article class="prose lg:prose-xl">
+        <div>
+            <h1>{data.competition.attributes.title}</h1>
+            {@html data.competition.attributes.text}
+        </div>
+    </article>
+{/if}
