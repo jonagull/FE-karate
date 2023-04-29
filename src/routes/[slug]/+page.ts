@@ -1,8 +1,7 @@
 import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
-import { PathNames, SingularSlugs } from "../../constants/pathNames.enum";
-import { AUTH_TOKEN, BASE_URL } from "../../constants/variables";
-
+import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
+import { AUTH_TOKEN, BASE_URL } from "$lib/constants/variables";
 let pageData: Lol;
 let sideBarData: string[];
 let mutatedMarkup: string;

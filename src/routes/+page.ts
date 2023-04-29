@@ -1,4 +1,4 @@
-import { AUTH_TOKEN, BASE_URL } from "../constants/variables.js";
+import { AUTH_TOKEN, BASE_URL } from "$lib/constants/variables";
 
 let pageData: any;
 

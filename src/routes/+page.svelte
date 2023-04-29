@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Hero from "../components/Hero.svelte";
+    import Hero from "$lib/components/Hero.svelte";
     import type { PageData } from "./$types";
 
     export let data: PageData;

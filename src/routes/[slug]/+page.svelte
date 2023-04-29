@@ -1,15 +1,14 @@
 <script lang="ts">
     import type { PageData } from "./$types";
-    import Sidebar from "../../components/Sidebar.svelte";
-    import { PathNames, SingularSlugs } from "../../constants/pathNames.enum";
-    import BeltTable from "../../components/BeltTable.svelte";
-    import Posts from "../../components/Posts.svelte";
+    import Sidebar from "../../lib/components/Sidebar.svelte";
+    import BeltTable from "../../lib/components/BeltTable.svelte";
+    import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
+    import Posts from "$lib/components/Posts.svelte";
 
     export let data: PageData;
-    $: hasTrainers = "trainers" in data;
 </script>
 
-{#if hasTrainers && data.trainers}
+{#if data.slug === PathNames.Trainers && data.trainers}
     <div class="grid grid-cols-2 gap-2">
         {#each data.trainers as x}
             <div class="card card-side bg-base-100 shadow-xl m-10">
@@ -36,7 +35,7 @@
             {#if data}
                 <div>
                     <h1>{data.title}</h1>
-                    {@html data.mutatedMarkup}
+                    {@html data.content}
                 </div>
             {/if}
         </article>

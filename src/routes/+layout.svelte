@@ -1,9 +1,8 @@
 <script>
     import "../app.css";
-    import { PathNames } from "../constants/pathNames.enum";
-    import ContactModal from "../components/ContactModal.svelte";
-    import Navbar from "../components/Navbar.svelte";
-    import Footer from "../components/Footer.svelte";
+    import ContactModal from "../lib/components/ContactModal.svelte";
+    import Navbar from "../lib/components/Navbar.svelte";
+    import Footer from "../lib/components/Footer.svelte";
 
     let showModal = false;
 </script>

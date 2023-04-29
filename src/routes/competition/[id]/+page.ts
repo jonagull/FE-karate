@@ -1,4 +1,4 @@
-import { AUTH_TOKEN, BASE_URL } from "../../../constants/variables";
+import { AUTH_TOKEN, BASE_URL } from "$lib/constants/variables";
 import type { PageLoad } from "./$types";
 
 export const load = (async ({ params }) => {

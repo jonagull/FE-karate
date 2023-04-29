@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { formatDate } from "../helpers/helpers";
+    import { formatDate } from "$lib/helpers/helpers";
 
     export let list: any;
 
