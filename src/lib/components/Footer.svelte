@@ -13,7 +13,12 @@
         class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0"
     >
         <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Om oss</a>
+            <a
+                class="mr-4 hover:underline md:mr-6"
+                target="_blank"
+                href="https://medlemskap.nif.no/Start/Index/427950"
+                rel="noreferrer">Bli med!</a
+            >
         </li>
         <li>
             <a href="#" class="mr-4 hover:underline md:mr-6">94855321</a>
@@ -21,13 +26,6 @@
         <li>
             <a href="#" class="mr-4 hover:underline md:mr-6"
                 >Havnegata 9, 4250 Kopervik</a
-            >
-        </li>
-        <li>
-            <a
-                href="#"
-                on:click={() => (showModal = true)}
-                class="hover:underline">Kontakt</a
             >
         </li>
     </ul>

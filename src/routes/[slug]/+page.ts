@@ -11,9 +11,7 @@ export const load = (async ({ params }) => {
         await fetchPageData(params.slug);
         return {
             title: pageData.data.attributes.title,
-            content: pageData.data.attributes.text,
-            mutatedMarkup: mutatedMarkup,
-            pageData: pageData,
+            content: mutatedMarkup,
             slug: params.slug,
             sideBar: sideBarData,
         };
@@ -24,40 +22,17 @@ export const load = (async ({ params }) => {
 
         return {
             title: pageData.data.attributes.title,
-            content: pageData.data.attributes.text,
-            mutatedMarkup: mutatedMarkup,
-            pageData: pageData,
+            content: mutatedMarkup,
             slug: params.slug,
             sideBar: sideBarData,
         };
     }
 
     if (params.slug === PathNames.Trainers) {
-        // await fetchPageData(params.slug);
-
-        interface list {
-            picture: string;
-            name: string;
-            bio: string;
-        }
-
-        const data: list[] = [
-            {
-                picture:
-                    "https://thumbs.dreamstime.com/b/personal-trainer-portrait-athletic-male-47980615.jpg",
-                name: "Alf Ronny",
-                bio: "Sollicitudin aenean senectus felis mi et diam sapien cras etiam",
-            },
-            {
-                picture:
-                    "https://thumbs.dreamstime.com/b/personal-trainer-portrait-athletic-male-47980615.jpg",
-                name: "lolathan",
-                bio: "Amet pharetra habitasse vivamus quam ante quis sagittis quisque luctus",
-            },
-        ];
+        await fetchPageData(params.slug, true);
 
         return {
-            trainers: data,
+            trainers: pageData.data,
             slug: params.slug,
         };
     }
@@ -73,7 +48,18 @@ export const load = (async ({ params }) => {
 
         return {
             title: pageData.data.attributes.title,
-            content: pageData.data.attributes.text,
+            content: mutatedMarkup,
+            slug: params.slug,
+        };
+    }
+
+    if (params.slug === PathNames.History) {
+        await fetchPageData(params.slug);
+
+        return {
+            title: pageData.data.attributes.title,
+            content: mutatedMarkup,
+            sideBar: sideBarData,
             slug: params.slug,
         };
     }
@@ -96,15 +82,36 @@ export const load = (async ({ params }) => {
         };
     }
 
+    if (params.slug === PathNames.Links) {
+        await fetchPageData(params.slug);
+
+        return {
+            links: pageData.data,
+            slug: params.slug,
+        };
+    }
+
+    if (params.slug === PathNames.Gallery) {
+        await fetchPageData(params.slug, true);
+
+        return {
+            galleryData: pageData.data,
+            slug: params.slug,
+        };
+    }
+
     throw error(404, "Not found");
 }) satisfies PageLoad;
 
-const fetchPageData = async (endpoint: string) => {
-    const res = await fetch(`${BASE_URL}/api/${endpoint}`, {
-        headers: {
-            Authorization: `Bearer ${AUTH_TOKEN}`,
-        },
-    });
+const fetchPageData = async (endpoint: string, withImgs = false) => {
+    const res = await fetch(
+        `${BASE_URL}/api/${endpoint}${withImgs ? "?populate=*" : ""}`,
+        {
+            headers: {
+                Authorization: `Bearer ${AUTH_TOKEN}`,
+            },
+        }
+    );
     pageData = await res.json();
 
     if (SingularSlugs.includes(endpoint as PathNames)) {

@@ -7,6 +7,9 @@ export enum PathNames {
     Competitions = "competitions",
     Posts = "posts",
     Trainers = "trainers",
+    Links = "links",
+    Gallery = "gallery",
+    History = "history",
 }
 
 export const SingularSlugs = [
@@ -14,6 +17,7 @@ export const SingularSlugs = [
     PathNames.Training,
     PathNames.Club,
     PathNames.Boardmembers,
+    PathNames.History,
 ];
 
 export const CollectionSlugs = [
