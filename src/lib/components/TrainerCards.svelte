@@ -7,7 +7,7 @@
 <div class="grid grid-cols-2 gap-2">
     {#each trainers as x}
         <div class="card card-side bg-base-100 shadow-xl m-10">
-            <figure>
+            <figure class="min-w-200" style="min-width: 200px;">
                 <img
                     class="w-40"
                     src={`${BASE_URL}${x.attributes.picture.data.attributes.url}`}
