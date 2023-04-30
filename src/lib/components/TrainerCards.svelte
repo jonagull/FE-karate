@@ -2,8 +2,6 @@
     import { BASE_URL } from "$lib/constants/variables";
 
     export let trainers: any;
-
-    console.log("trainers", trainers);
 </script>
 
 <div class="grid grid-cols-2 gap-2">

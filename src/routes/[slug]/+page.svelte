@@ -44,7 +44,7 @@
 {#if data.slug === PathNames.Belts}
     <article class="prose lg:prose-xl">
         <div>
-            <BeltTable />
+            <BeltTable belts={data.belts} />
         </div>
     </article>
 {/if}

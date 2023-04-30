@@ -1,10 +1,7 @@
 <script lang="ts">
     import { BASE_URL } from "$lib/constants/variables";
-    import { attr } from "svelte/internal";
 
     export let galleryData: any;
-
-    console.log("inside", galleryData);
 </script>
 
 <article class="prose lg:prose-xl">
@@ -14,6 +11,12 @@
     </div>
 </article>
 
-{#each galleryData.attributes.image.data as img}
-    <img src={BASE_URL + img.attributes.url} alt="" />
-{/each}
+<div class="container grid grid-cols-3 gap-2 mx-auto">
+    {#each galleryData.attributes.image.data as img}
+        <div class="w-full rounded">
+            <a target="_blank" href={BASE_URL + img.attributes.url}>
+                <img src={BASE_URL + img.attributes.url} alt="" />
+            </a>
+        </div>
+    {/each}
+</div>

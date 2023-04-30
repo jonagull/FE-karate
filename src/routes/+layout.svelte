@@ -33,20 +33,3 @@
 </ContactModal>
 
 <Footer />
-
-<style>
-    @media only screen and (min-width: 768px) {
-        .parent:hover .child {
-            opacity: 1;
-            height: auto;
-            overflow: none;
-            transform: translateY(0);
-        }
-        .child {
-            opacity: 0;
-            height: 0;
-            overflow: hidden;
-            transform: translateY(-10%);
-        }
-    }
-</style>
