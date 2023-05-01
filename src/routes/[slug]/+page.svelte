@@ -9,19 +9,21 @@
     import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
 
     export let data: PageData;
+
+    $: inSingularSlugs = SingularSlugs.includes(data.slug as PathNames);
 </script>
 
-{#if SingularSlugs.includes(data.slug as PathNames)}
+{#if inSingularSlugs}
     <div class="flex">
         <div>
             {#if data.sideBar?.length}
                 <Sidebar links={data.sideBar} />
             {/if}
         </div>
-        <!-- <article class="prose lg:prose-xl"> -->
         <article
             class={data.slug === PathNames.Boardmembers ||
-            data.slug === PathNames.Training
+            data.slug === PathNames.Training ||
+            data.slug === PathNames.History
                 ? "prose min-w-400"
                 : "prose lg:prose-xl"}
         >
@@ -35,15 +37,15 @@
     </div>
 {/if}
 
-{#if data.slug === PathNames.Trainers && data.trainers}
+{#if data.slug === PathNames.Trainers}
     <TrainerCards trainers={data.trainers} />
 {/if}
 
-{#if data.slug === PathNames.Gallery && data.galleryData}
+{#if data.slug === PathNames.Gallery}
     <Gallery galleryData={data.galleryData} />
 {/if}
 
-{#if data.slug === PathNames.Links && data.links}
+{#if data.slug === PathNames.Links}
     <Links links={data.links} />
 {/if}
 

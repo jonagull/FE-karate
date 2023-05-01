@@ -64,6 +64,11 @@
                 class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b"
             >
                 <li>
+                    <a href="/rating" class="flex px-4 py-3 hover:bg-gray-50">
+                        Gradering
+                    </a>
+                </li>
+                <li>
                     <a href="/kihon" class="flex px-4 py-3 hover:bg-gray-50">
                         Kihon/Kumite
                     </a>
@@ -71,11 +76,6 @@
                 <li>
                     <a href="/kata" class="flex px-4 py-3 hover:bg-gray-50">
                         Kata
-                    </a>
-                </li>
-                <li>
-                    <a href="/rating" class="flex px-4 py-3 hover:bg-gray-50">
-                        Gradering
                     </a>
                 </li>
                 <li>

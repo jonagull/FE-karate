@@ -18,7 +18,7 @@
                 <a
                     target="_blank"
                     href="https://medlemskap.nif.no/Start/Index/427950"
-                    rel="noreferrer">Bli med!</a
+                    rel="noreferrer">Bli medlem!</a
                 >
             </button>
         </div>
