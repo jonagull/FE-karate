@@ -7,19 +7,8 @@ let sideBarData: string[];
 let mutatedMarkup: string;
 
 export const load = (async ({ params }) => {
-    if (params.slug === PathNames.Club) {
+    if (SingularSlugs.includes(params.slug as PathNames)) {
         await fetchPageData(params.slug);
-        return {
-            title: pageData.data.attributes.title,
-            content: mutatedMarkup,
-            slug: params.slug,
-            sideBar: sideBarData,
-        };
-    }
-
-    if (params.slug === PathNames.Training) {
-        await fetchPageData(params.slug);
-
         return {
             title: pageData.data.attributes.title,
             content: mutatedMarkup,
@@ -78,27 +67,6 @@ export const load = (async ({ params }) => {
 
         return {
             belts: lol,
-            slug: params.slug,
-        };
-    }
-
-    if (params.slug === PathNames.Boardmembers) {
-        await fetchPageData(params.slug);
-
-        return {
-            title: pageData.data.attributes.title,
-            content: mutatedMarkup,
-            slug: params.slug,
-        };
-    }
-
-    if (params.slug === PathNames.History) {
-        await fetchPageData(params.slug);
-
-        return {
-            title: pageData.data.attributes.title,
-            content: mutatedMarkup,
-            sideBar: sideBarData,
             slug: params.slug,
         };
     }

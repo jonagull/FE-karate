@@ -2,19 +2,19 @@
     import type { PageData } from "./$types";
     import Sidebar from "../../lib/components/Sidebar.svelte";
     import BeltTable from "../../lib/components/BeltTable.svelte";
-    import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
     import Posts from "$lib/components/Posts.svelte";
     import TrainerCards from "$lib/components/TrainerCards.svelte";
     import Links from "$lib/components/Links.svelte";
     import Gallery from "$lib/components/Gallery.svelte";
+    import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
 
     export let data: PageData;
 </script>
 
-{#if SingularSlugs.includes(data.slug)}
+{#if SingularSlugs.includes(data.slug as PathNames)}
     <div class="flex">
         <div>
-            {#if data.sideBar}
+            {#if data.sideBar?.length}
                 <Sidebar links={data.sideBar} />
             {/if}
         </div>
