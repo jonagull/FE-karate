@@ -10,6 +10,10 @@ export enum PathNames {
     Links = "links",
     Gallery = "gallery",
     History = "history",
+    Encyclopedia = "encyclopedia",
+    Rating = "rating",
+    Kata = "kata",
+    Kihon = "kihon",
 }
 
 export const SingularSlugs = [
@@ -18,6 +22,10 @@ export const SingularSlugs = [
     PathNames.Club,
     PathNames.Boardmembers,
     PathNames.History,
+    PathNames.Kata,
+    PathNames.Kihon,
+    PathNames.Rating,
+    PathNames.Encyclopedia,
 ];
 
 export const CollectionSlugs = [

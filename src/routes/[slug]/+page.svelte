@@ -18,7 +18,13 @@
                 <Sidebar links={data.sideBar} />
             {/if}
         </div>
-        <article class="prose lg:prose-xl">
+        <!-- <article class="prose lg:prose-xl"> -->
+        <article
+            class={data.slug === PathNames.Boardmembers ||
+            data.slug === PathNames.Training
+                ? "prose min-w-400"
+                : "prose lg:prose-xl"}
+        >
             {#if data}
                 <div>
                     <h1>{data.title}</h1>

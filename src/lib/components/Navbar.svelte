@@ -37,12 +37,20 @@
                 <span>Nyheter</span>
             </a>
         </li>
+        <li>
+            <a
+                href="/competitions"
+                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
+            >
+                <span>Resultater</span>
+            </a>
+        </li>
         <li class="relative parent">
             <a
                 href="#"
                 class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2"
             >
-                <span>Resultater</span>
+                <span>Karate</span>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-4 h-4 fill-current pt-1"
@@ -56,16 +64,26 @@
                 class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b"
             >
                 <li>
-                    <a href="/belts" class="flex px-4 py-3 hover:bg-gray-50">
-                        Sortbelter
+                    <a href="/kihon" class="flex px-4 py-3 hover:bg-gray-50">
+                        Kihon/Kumite
+                    </a>
+                </li>
+                <li>
+                    <a href="/kata" class="flex px-4 py-3 hover:bg-gray-50">
+                        Kata
+                    </a>
+                </li>
+                <li>
+                    <a href="/rating" class="flex px-4 py-3 hover:bg-gray-50">
+                        Gradering
                     </a>
                 </li>
                 <li>
                     <a
-                        href="/competitions"
+                        href="/encyclopedia"
                         class="flex px-4 py-3 hover:bg-gray-50"
                     >
-                        Konkurranser
+                        Leksikon
                     </a>
                 </li>
             </ul>
@@ -88,6 +106,11 @@
             <ul
                 class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b"
             >
+                <li>
+                    <a href="/belts" class="flex px-4 py-3 hover:bg-gray-50">
+                        Sortbelter
+                    </a>
+                </li>
                 <li>
                     <a href="/trainers" class="flex px-4 py-3 hover:bg-gray-50">
                         Instruktører
