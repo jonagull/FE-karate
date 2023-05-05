@@ -25,7 +25,7 @@
             data.slug === PathNames.Training ||
             data.slug === PathNames.History
                 ? "prose min-w-400"
-                : "prose lg:prose-xl"}
+                : "prose "}
         >
             {#if data}
                 <div>

@@ -5,7 +5,7 @@
 </script>
 
 {#if data}
-    <article class="prose lg:prose-xl">
+    <article class="prose">
         <div>
             <h1>{data.post.attributes.title}</h1>
             {@html data.post.attributes.text}

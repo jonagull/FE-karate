@@ -7,7 +7,7 @@
 
 <Hero />
 
-<article class="mb-20 prose lg:prose-xl">
+<article class="mb-40 prose">
     <h1>{data.title}</h1>
     {@html data.content}
 </article>
