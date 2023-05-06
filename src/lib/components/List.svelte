@@ -69,10 +69,9 @@
                                 paginationFetch(
                                     listData.meta.pagination.page - 1
                                 )}
-                            class="pag">Previous</a
+                            class="pag">Tilbake</a
                         >
                     </li>
-
                     {#each Array(listData.meta.pagination.pageCount) as _, i}
                         <li>
                             <a
@@ -94,7 +93,7 @@
                             on:click={() =>
                                 paginationFetch(
                                     listData.meta.pagination.page + 1
-                                )}>Next</a
+                                )}>Neste</a
                         >
                     </li>
                 </ul>
