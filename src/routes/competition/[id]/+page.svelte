@@ -5,7 +5,7 @@
 </script>
 
 {#if data}
-    <article class="prose">
+    <article class="prose mt-20">
         <div>
             <h1>{data.competition.attributes.title}</h1>
             {@html data.competition.attributes.text}

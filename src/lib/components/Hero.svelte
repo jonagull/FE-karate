@@ -1,3 +1,7 @@
+<script lang="ts">
+    export let hasLatestPosts: boolean;
+</script>
+
 <div class="hero min-h-screen">
     <div class="hero-content flex-col lg:flex-row">
         <div class="p-20">
@@ -14,13 +18,19 @@
                 assumenda excepturi exercitationem quasi. In deleniti eaque aut
                 repudiandae et a id nisi.
             </p>
-            <button class="btn btn-primary">
+            <a
+                class="btn btn-primary"
+                target="_blank"
+                href="https://medlemskap.nif.no/Start/Index/427950"
+                rel="noreferrer">Bli medlem!</a
+            >
+
+            {#if hasLatestPosts}
                 <a
-                    target="_blank"
-                    href="https://medlemskap.nif.no/Start/Index/427950"
-                    rel="noreferrer">Bli medlem!</a
+                    class="text-black btn btn-primary bg-transparent"
+                    href="#siste">Siste nyheter</a
                 >
-            </button>
+            {/if}
         </div>
     </div>
 </div>
