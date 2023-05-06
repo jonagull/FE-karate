@@ -2,7 +2,7 @@
     import type { PageData } from "./$types";
     import Sidebar from "../../lib/components/Sidebar.svelte";
     import BeltTable from "../../lib/components/BeltTable.svelte";
-    import Posts from "$lib/components/Posts.svelte";
+    import List from "$lib/components/List.svelte";
     import TrainerCards from "$lib/components/TrainerCards.svelte";
     import Links from "$lib/components/Links.svelte";
     import Gallery from "$lib/components/Gallery.svelte";
@@ -58,9 +58,9 @@
 {/if}
 
 {#if data.slug === PathNames.Posts}
-    <Posts list={data} />
+    <List slug={data.slug} />
 {/if}
 
 {#if data.slug === PathNames.Competitions}
-    <Posts list={data} />
+    <List slug={data.slug} />
 {/if}

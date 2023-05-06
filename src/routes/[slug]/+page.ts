@@ -2,6 +2,7 @@ import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
 import { AUTH_TOKEN, BASE_URL } from "$lib/constants/variables";
+
 let pageData: Lol;
 let sideBarData: string[];
 let mutatedMarkup: string;
@@ -72,10 +73,7 @@ export const load = (async ({ params }) => {
     }
 
     if (params.slug === PathNames.Posts) {
-        await fetchPageData(params.slug);
-
         return {
-            posts: pageData.data || [],
             slug: params.slug,
         };
     }
