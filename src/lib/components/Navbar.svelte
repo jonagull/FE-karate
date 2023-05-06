@@ -1,4 +1,6 @@
-<nav class="flex px-4 border-b md:shadow-lg items-center relative fixed top-0">
+<nav
+    class="flex px-4 border-b md:shadow-lg items-center relative sticky top-0 z-10 bg-white"
+>
     <div class="text-lg font-bold md:py-0 py-4">
         <a href="/">Sentrum Karate</a>
     </div>
@@ -13,14 +15,6 @@
                 <span>Fremsiden</span>
             </a>
         </li>
-        <!-- <li>
-            <a
-                href="/club"
-                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
-            >
-                <span>Blog</span>
-            </a>
-        </li> -->
         <li>
             <a
                 href="/training"

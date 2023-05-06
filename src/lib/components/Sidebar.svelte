@@ -19,7 +19,7 @@
         position: sticky;
         padding: 20px;
         margin-right: 20px;
-        top: 20px;
+        top: 70px;
         text-decoration: none;
         border: solid 1px grey;
         list-style-type: none;
