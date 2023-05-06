@@ -50,7 +50,7 @@
 {/if}
 
 {#if data.slug === PathNames.Belts}
-    <article class="prose lg:prose-xl">
+    <article class="prose">
         <div>
             <BeltTable belts={data.belts} />
         </div>
@@ -58,9 +58,15 @@
 {/if}
 
 {#if data.slug === PathNames.Posts}
+    <article class="prose mb-5">
+        <h1>Nyhets arkiv</h1>
+    </article>
     <List slug={data.slug} />
 {/if}
 
 {#if data.slug === PathNames.Competitions}
+    <article class="prose mb-5">
+        <h1>Konkurranser</h1>
+    </article>
     <List slug={data.slug} />
 {/if}

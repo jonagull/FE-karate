@@ -59,42 +59,47 @@
             >
         {/each}
 
-        <nav class="mt-5 flex flex-col items-center">
-            <ul class="inline-flex -space-x-px">
-                <li>
-                    <a
-                        href="#"
-                        on:click={() =>
-                            paginationFetch(listData.meta.pagination.page - 1)}
-                        class="pag">Previous</a
-                    >
-                </li>
-
-                {#each Array(listData.meta.pagination.pageCount) as _, i}
+        {#if listData.meta.pagination.pageCount > 1}
+            <nav class="mt-5 flex flex-col items-center">
+                <ul class="inline-flex -space-x-px">
                     <li>
                         <a
                             href="#"
-                            on:click={() => paginationFetch(i + 1)}
-                            class={listData.meta.pagination.page === i + 1
-                                ? "current-pag"
-                                : "pag"}
+                            on:click={() =>
+                                paginationFetch(
+                                    listData.meta.pagination.page - 1
+                                )}
+                            class="pag">Previous</a
                         >
-                            {i + 1}
-                        </a>
                     </li>
-                {/each}
 
-                <li>
-                    <a
-                        href="#"
-                        class="pag"
-                        on:click={() =>
-                            paginationFetch(listData.meta.pagination.page + 1)}
-                        >Next</a
-                    >
-                </li>
-            </ul>
-        </nav>
+                    {#each Array(listData.meta.pagination.pageCount) as _, i}
+                        <li>
+                            <a
+                                href="#"
+                                on:click={() => paginationFetch(i + 1)}
+                                class={listData.meta.pagination.page === i + 1
+                                    ? "current-pag"
+                                    : "pag"}
+                            >
+                                {i + 1}
+                            </a>
+                        </li>
+                    {/each}
+
+                    <li>
+                        <a
+                            href="#"
+                            class="pag"
+                            on:click={() =>
+                                paginationFetch(
+                                    listData.meta.pagination.page + 1
+                                )}>Next</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        {/if}
     </div>
 {/if}
 
