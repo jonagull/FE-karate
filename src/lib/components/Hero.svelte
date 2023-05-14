@@ -1,5 +1,6 @@
 <script lang="ts">
   export let hasLatestPosts: boolean;
+  export let latestPostLabel: string;
 </script>
 
 <div class="hero min-h-screen">
@@ -36,7 +37,7 @@
 
       {#if hasLatestPosts}
         <a class="text-black btn btn-primary bg-transparent" href="#siste"
-          >Siste nyheter</a
+          >{latestPostLabel}</a
         >
       {/if}
     </div>
