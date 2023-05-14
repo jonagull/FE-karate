@@ -21,12 +21,12 @@
       >
     </li>
     <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6">928 37 931</a>
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <a class="mr-4 hover:underline md:mr-6">928 37 931</a>
     </li>
     <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6"
-        >Havnegata 9, 4250 Kopervik</a
-      >
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <a class="mr-4 hover:underline md:mr-6">Havnegata 9, 4250 Kopervik</a>
     </li>
   </ul>
 </footer>
