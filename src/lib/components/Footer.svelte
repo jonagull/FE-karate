@@ -17,7 +17,7 @@
         class="mr-4 hover:underline md:mr-6"
         target="_blank"
         href="https://medlemskap.nif.no/Start/Index/427950"
-        rel="noreferrer">Bli med!</a
+        rel="noreferrer">Bli medlem!</a
       >
     </li>
     <li>
