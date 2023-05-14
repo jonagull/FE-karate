@@ -13,7 +13,7 @@
       />
     </div>
     <div>
-      <h1 class="text-5xl font-bold">Test</h1>
+      <h1 class="text-5xl font-bold">Sentrum karate</h1>
       <p class="pt-2">
         Velkommen til Sentrum karateklubb - Koperviks ledende karateklubb! Vi er
         en karateklubb med en stolt historie og et solid rykte for å utvikle
