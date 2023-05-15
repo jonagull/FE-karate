@@ -15,6 +15,7 @@
 <!-- <article class="mb-40 prose">
     <h1>{data.title}</h1>
     {@html data.content}
+    d
 </article> -->
 
 {#if data.latestsPosts}
