@@ -1,189 +1,58 @@
-<nav
-    class="flex px-4 border-b md:shadow-lg items-center relative sticky top-0 z-10 bg-white"
->
-    <div class="text-lg font-bold md:py-0 py-4">
-        <a href="/">Sentrum Karate</a>
-    </div>
-    <ul
-        class="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0"
-    >
-        <li>
-            <a
-                href="/"
-                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
-            >
-                <span>Fremsiden</span>
-            </a>
-        </li>
-        <li>
-            <a
-                href="/training"
-                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
-            >
-                <span>Treningstider</span>
-            </a>
-        </li>
-        <li>
-            <a
-                href="/posts"
-                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
-            >
-                <span>Nyheter</span>
-            </a>
-        </li>
-        <li>
-            <a
-                href="/competitions"
-                class="flex md:inline-flex p-4 items-center hover:bg-gray-50"
-            >
-                <span>Resultater</span>
-            </a>
-        </li>
-        <li class="relative parent">
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <a
-                href="#"
-                class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2"
-            >
-                <span>Karate</span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4 fill-current pt-1"
-                    viewBox="0 0 24 24"
-                    ><path
-                        d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
-                    /></svg
-                >
-            </a>
-            <ul
-                class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b"
-            >
-                <li>
-                    <a href="/rating" class="flex px-4 py-3 hover:bg-gray-50">
-                        Gradering
-                    </a>
-                </li>
-                <li>
-                    <a href="/kihon" class="flex px-4 py-3 hover:bg-gray-50">
-                        Kihon/Kumite
-                    </a>
-                </li>
-                <li>
-                    <a href="/kata" class="flex px-4 py-3 hover:bg-gray-50">
-                        Kata
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/encyclopedia"
-                        class="flex px-4 py-3 hover:bg-gray-50"
-                    >
-                        Leksikon
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="relative parent">
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <a
-                href="#"
-                class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2"
-            >
-                <span>Klubben</span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4 fill-current pt-1"
-                    viewBox="0 0 24 24"
-                    ><path
-                        d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
-                    /></svg
-                >
-            </a>
-            <ul
-                class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b"
-            >
-                <li>
-                    <a href="/belts" class="flex px-4 py-3 hover:bg-gray-50">
-                        Sortbelter
-                    </a>
-                </li>
-                <li>
-                    <a href="/trainers" class="flex px-4 py-3 hover:bg-gray-50">
-                        Instruktører
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/boardmember"
-                        class="flex px-4 py-3 hover:bg-gray-50"
-                    >
-                        Styret
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="relative parent">
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <a
-                href="#"
-                class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2"
-            >
-                <span>Diverse</span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4 fill-current pt-1"
-                    viewBox="0 0 24 24"
-                    ><path
-                        d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
-                    /></svg
-                >
-            </a>
-            <ul
-                class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b"
-            >
-                <li>
-                    <a href="/links" class="flex px-4 py-3 hover:bg-gray-50">
-                        Linker
-                    </a>
-                </li>
-                <li>
-                    <a href="/gallery" class="flex px-4 py-3 hover:bg-gray-50">
-                        Media
-                    </a>
-                </li>
-                <li>
-                    <a href="/history" class="flex px-4 py-3 hover:bg-gray-50">
-                        Historie
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <div class="ml-auto md:hidden text-gray-500 cursor-pointer">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5 fill-current"
-            viewBox="0 0 24 24"
-            ><path
-                d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"
-            /></svg
-        >
-    </div>
-</nav>
+<script>
+    import {
+        Navbar,
+        NavBrand,
+        NavLi,
+        NavUl,
+        NavHamburger,
+        Dropdown,
+        DropdownItem,
+        Chevron,
+    } from "flowbite-svelte";
+</script>
 
-<style>
-    @media only screen and (min-width: 768px) {
-        .parent:hover .child {
-            opacity: 1;
-            height: auto;
-            overflow: none;
-            transform: translateY(0);
-        }
-        .child {
-            opacity: 0;
-            height: 0;
-            overflow: hidden;
-            transform: translateY(-10%);
-        }
-    }
-</style>
+<Navbar let:hidden let:toggle>
+    <NavBrand href="/">
+        <span
+            class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
+        >
+            Sentrum Karateklubb
+        </span>
+    </NavBrand>
+    <NavHamburger on:click={toggle} />
+    <NavUl {hidden}>
+        <NavLi href="/" active={true}>Fremsiden</NavLi>
+        <NavLi href="/training">Treningstider</NavLi>
+        <NavLi href="/posts">Nyheter</NavLi>
+        <NavLi href="/history">Historie</NavLi>
+        <NavLi href="/competitions">Resultater</NavLi>
+
+        <NavLi id="nav-menu1" class="cursor-pointer"
+            ><Chevron aligned>Karate</Chevron></NavLi
+        >
+        <Dropdown triggeredBy="#nav-menu1" class="w-44 z-20">
+            <DropdownItem href="/rating">Gradering</DropdownItem>
+            <DropdownItem href="/kihon">Kihon/Kumite</DropdownItem>
+            <DropdownItem href="/kata">Kata</DropdownItem>
+            <DropdownItem href="/encyclopedia">Leksikon</DropdownItem>
+        </Dropdown>
+
+        <NavLi id="nav-menu2" class="cursor-pointer"
+            ><Chevron aligned>Klubben</Chevron></NavLi
+        >
+        <Dropdown triggeredBy="#nav-menu2" class="w-44 z-20">
+            <DropdownItem href="/belts">Sortbelter</DropdownItem>
+            <DropdownItem href="/trainers">Instruktører</DropdownItem>
+            <DropdownItem href="/boardmember">Styret</DropdownItem>
+        </Dropdown>
+
+        <NavLi id="nav-menu3" class="cursor-pointer"
+            ><Chevron aligned>Diverse</Chevron></NavLi
+        >
+        <Dropdown triggeredBy="#nav-menu3" class="w-44 z-20">
+            <DropdownItem href="/links">Linker</DropdownItem>
+            <DropdownItem href="/gallery">Media</DropdownItem>
+            <DropdownItem href="/history">Historie</DropdownItem>
+        </Dropdown>
+    </NavUl>
+</Navbar>
