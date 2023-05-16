@@ -7,14 +7,15 @@
     import Links from "$lib/components/Links.svelte";
     import Gallery from "$lib/components/Gallery.svelte";
     import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
-
     export let data: PageData;
+
+    const isMobile = window.innerWidth < 620;
 
     $: inSingularSlugs = SingularSlugs.includes(data.slug as PathNames);
 </script>
 
 {#if inSingularSlugs}
-    <div class="flex">
+    <div class={isMobile ? "" : "flex"}>
         <div>
             {#if data.sideBar?.length}
                 <Sidebar links={data.sideBar} />
