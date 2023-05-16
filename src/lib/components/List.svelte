@@ -2,6 +2,14 @@
     import { AUTH_TOKEN, BASE_URL } from "$lib/constants/variables";
     import { formatDate } from "$lib/helpers/helpers";
     import { onMount } from "svelte";
+    import {
+        Table,
+        TableBody,
+        TableBodyCell,
+        TableBodyRow,
+        TableHead,
+        TableHeadCell,
+    } from "flowbite-svelte";
 
     let listData: any;
     let hasData = false;
@@ -49,20 +57,39 @@
 
 {#if hasData}
     <div class="flex flex-col">
-        {#each listData.data as p}
-            <a
-                class="container btn btn-white p-5"
-                href={hasPosts ? `/post/${p.id}` : `/competition/${p.id}`}
-                >{`${p.id} - ${p.attributes.title} - ${formatDate(
-                    p.attributes.createdAt || ""
-                )}`}</a
-            >
-        {/each}
+        <Table hoverable={true}>
+            <TableHead>
+                <TableHeadCell>Handling</TableHeadCell>
+                <TableHeadCell>Tittel</TableHeadCell>
+                <TableHeadCell>Dato</TableHeadCell>
+            </TableHead>
+            <TableBody>
+                {#each listData.data as p}
+                    <TableBodyRow>
+                        <TableBodyCell>
+                            <a
+                                class="font-medium text-blue-600 hover:underline"
+                                href={hasPosts
+                                    ? `/post/${p.id}`
+                                    : `/competition/${p.id}`}>Les</a
+                            >
+                        </TableBodyCell>
+                        <TableBodyCell>{p.attributes.title}</TableBodyCell>
+                        <TableBodyCell
+                            >{formatDate(
+                                p.attributes.createdAt || ""
+                            )}</TableBodyCell
+                        >
+                    </TableBodyRow>
+                {/each}
+            </TableBody>
+        </Table>
 
         {#if listData.meta.pagination.pageCount > 1}
             <nav class="mt-5 flex flex-col items-center">
                 <ul class="inline-flex -space-x-px">
                     <li>
+                        <!-- svelte-ignore a11y-invalid-attribute -->
                         <a
                             href="#"
                             on:click={() =>
@@ -74,6 +101,7 @@
                     </li>
                     {#each Array(listData.meta.pagination.pageCount) as _, i}
                         <li>
+                            <!-- svelte-ignore a11y-invalid-attribute -->
                             <a
                                 href="#"
                                 on:click={() => paginationFetch(i + 1)}
@@ -87,6 +115,7 @@
                     {/each}
 
                     <li>
+                        <!-- svelte-ignore a11y-invalid-attribute -->
                         <a
                             href="#"
                             class="pag"
@@ -101,53 +130,3 @@
         {/if}
     </div>
 {/if}
-
-<style>
-    .container {
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        width: auto;
-        padding: 10px;
-        margin: 5px;
-    }
-
-    .btn:link,
-    .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-white {
-        background-color: #fff;
-        color: black;
-        border: none;
-    }
-
-    .btn::after {
-        content: "";
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        border-radius: 100px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: all 0.4s;
-    }
-
-    .btn-white::after {
-        background-color: #fff;
-    }
-
-    .btn:hover::after {
-        transform: scaleX(1.4) scaleY(1.6);
-        opacity: 0;
-    }
-</style>
