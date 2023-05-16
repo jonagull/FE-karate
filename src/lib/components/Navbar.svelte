@@ -24,7 +24,6 @@
         <NavLi href="/" active={true}>Fremsiden</NavLi>
         <NavLi href="/training">Treningstider</NavLi>
         <NavLi href="/posts">Nyheter</NavLi>
-        <NavLi href="/history">Historie</NavLi>
         <NavLi href="/competitions">Resultater</NavLi>
 
         <NavLi id="nav-menu1" class="cursor-pointer"
