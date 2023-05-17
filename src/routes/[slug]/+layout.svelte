@@ -1,5 +1,5 @@
-<div class="p-20">
-    <slot />
+<div class="p-5">
+  <slot />
 </div>
 
 <!-- <img
