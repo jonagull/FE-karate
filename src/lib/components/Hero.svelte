@@ -1,11 +1,13 @@
 <script lang="ts">
+  const isMobile = window.innerWidth < 620;
+
   export let hasLatestPosts: boolean;
   export let latestPostLabel: string;
 </script>
 
 <div class="hero min-h-screen">
   <div class="hero-content flex-col lg:flex-row">
-    <div class="p-20">
+    <div class={isMobile ? "" : "p-20"}>
       <img
         alt="hero"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Karate_silhouette.svg/1200px-Karate_silhouette.svg.png"
