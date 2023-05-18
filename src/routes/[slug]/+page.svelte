@@ -45,12 +45,10 @@
     <Links links={data.links} />
 {/if}
 
-{#if data.slug === PathNames.Belts}
-    <article class="prose">
-        <div>
-            <BeltTable belts={data.belts} />
-        </div>
-    </article>
+{#if data.slug === PathNames.Blackbelts}
+    <ProseWrapper>
+        <BeltTable slug={data.slug} />
+    </ProseWrapper>
 {/if}
 
 {#if data.slug === PathNames.Posts}

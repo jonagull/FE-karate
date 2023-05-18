@@ -27,47 +27,8 @@ export const load = (async ({ params }) => {
         };
     }
 
-    if (params.slug === PathNames.Belts) {
-        // fetchPageData(params.slug);
-
-        const lol = [
-            {
-                id: 1,
-                attributes: {
-                    name: "jonahtan",
-                    dan: "3. Dan",
-                    location: "Kopervik",
-                    createdAt: "2023-04-29T21:39:59.497Z",
-                    updatedAt: "2023-04-29T21:40:00.879Z",
-                    publishedAt: "2023-04-29T21:40:00.877Z",
-                },
-            },
-            {
-                id: 2,
-                attributes: {
-                    name: "Lolatahn",
-                    dan: "3. Dan",
-                    location: "Kopervik",
-                    createdAt: "2023-04-29T21:39:59.497Z",
-                    updatedAt: "2023-04-29T21:40:00.879Z",
-                    publishedAt: "2023-04-29T21:40:00.877Z",
-                },
-            },
-            {
-                id: 3,
-                attributes: {
-                    name: "Trenathan",
-                    dan: "3. Dan",
-                    location: "Kopervik",
-                    createdAt: "2023-04-29T21:39:59.497Z",
-                    updatedAt: "2023-04-29T21:40:00.879Z",
-                    publishedAt: "2023-04-29T21:40:00.877Z",
-                },
-            },
-        ];
-
+    if (params.slug === PathNames.Blackbelts) {
         return {
-            belts: lol,
             slug: params.slug,
         };
     }
@@ -118,6 +79,7 @@ const fetchPageData = async (endpoint: string, withImgs = false) => {
         }
     );
     pageData = await res.json();
+
     if (SingularSlugs.includes(endpoint as PathNames)) {
         htmlParser(pageData);
     }

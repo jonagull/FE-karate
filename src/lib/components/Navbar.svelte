@@ -40,7 +40,7 @@
             ><Chevron aligned>Klubben</Chevron></NavLi
         >
         <Dropdown triggeredBy="#nav-menu2" class="w-44 z-20">
-            <DropdownItem href="/belts">Sortbelter</DropdownItem>
+            <DropdownItem href="/blackbelts">Sortbelter</DropdownItem>
             <DropdownItem href="/trainers">Instruktører</DropdownItem>
             <DropdownItem href="/boardmember">Styret</DropdownItem>
         </Dropdown>

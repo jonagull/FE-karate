@@ -10,22 +10,10 @@
         TableHead,
         TableHeadCell,
     } from "flowbite-svelte";
+    import { fetchPageData } from "$lib/helpers/api";
 
     let listData: any;
-    let hasData = false;
     export let slug: string;
-
-    const fetchPageData = async (endpoint: string) => {
-        const res = await fetch(`${BASE_URL}/api/${endpoint}`, {
-            headers: {
-                Authorization: `Bearer ${AUTH_TOKEN}`,
-            },
-        });
-        listData = await res.json();
-        if (listData.data.length) {
-            hasData = true;
-        }
-    };
 
     const paginationFetch = async (page: any) => {
         if (page === 0 || page > listData.meta.pagination.pageCount) {
@@ -43,19 +31,16 @@
             }
         );
         listData = await res.json();
-        if (listData.data.length) {
-            hasData = true;
-        }
     };
 
     onMount(async () => {
-        fetchPageData(slug);
+        listData = await fetchPageData(slug);
     });
 
     const hasPosts = slug === "posts";
 </script>
 
-{#if hasData}
+{#if listData && listData.data && listData.data.length > 0}
     <div class="flex flex-col">
         <Table hoverable={true}>
             <TableHead>

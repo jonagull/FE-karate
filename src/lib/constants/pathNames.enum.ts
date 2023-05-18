@@ -2,7 +2,7 @@ export enum PathNames {
     Home = "/",
     Training = "training",
     Club = "club",
-    Belts = "belts",
+    Blackbelts = "blackbelts",
     Boardmembers = "boardmember",
     Competitions = "competitions",
     Posts = "posts",
@@ -30,7 +30,7 @@ export const SingularSlugs = [
 
 export const CollectionSlugs = [
     PathNames.Posts,
-    PathNames.Belts,
+    PathNames.Blackbelts,
     PathNames.Boardmembers,
     PathNames.Competitions,
 ];
