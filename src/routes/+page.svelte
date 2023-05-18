@@ -17,7 +17,7 @@
     {@html data.content}
 </article> -->
 
-{#if data.latestsPosts}
+{#if data.latestsPosts.length}
   <article class="prose">
     <h1 id="siste">{latestPostLabel}</h1>
 
