@@ -7,6 +7,7 @@
   import Links from "$lib/components/Links.svelte";
   import Gallery from "$lib/components/Gallery.svelte";
   import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
+  import ProseWrapper from "$lib/components/ProseWrapper.svelte";
   export let data: PageData;
 
   const isMobile = window.innerWidth < 620;
@@ -21,20 +22,14 @@
         <Sidebar links={data.sideBar} />
       {/if}
     </div>
-    <article
-      class={data.slug === PathNames.Boardmembers ||
-      data.slug === PathNames.Training ||
-      data.slug === PathNames.History
-        ? "prose min-w-400"
-        : "prose "}
-    >
-      {#if data}
+    {#if data}
+      <ProseWrapper>
         <div>
           <h1>{data.title}</h1>
           {@html data.content}
         </div>
-      {/if}
-    </article>
+      </ProseWrapper>
+    {/if}
   </div>
 {/if}
 
