@@ -1,66 +1,66 @@
 <script lang="ts">
-    import type { PageData } from "./$types";
-    import Sidebar from "../../lib/components/Sidebar.svelte";
-    import BeltTable from "../../lib/components/BeltTable.svelte";
-    import List from "$lib/components/List.svelte";
-    import TrainerCards from "$lib/components/TrainerCards.svelte";
-    import Links from "$lib/components/Links.svelte";
-    import Gallery from "$lib/components/Gallery.svelte";
-    import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
-    import ProseWrapper from "$lib/components/ProseWrapper.svelte";
-    export let data: PageData;
+  import type { PageData } from "./$types";
+  import Sidebar from "../../lib/components/Sidebar.svelte";
+  import BeltTable from "../../lib/components/BeltTable.svelte";
+  import List from "$lib/components/List.svelte";
+  import TrainerCards from "$lib/components/TrainerCards.svelte";
+  import Links from "$lib/components/Links.svelte";
+  import Gallery from "$lib/components/Gallery.svelte";
+  import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
+  import ProseWrapper from "$lib/components/ProseWrapper.svelte";
+  export let data: PageData;
 
-    const isMobile = window.innerWidth < 620;
+  const isMobile = window.innerWidth < 620;
 
-    $: inSingularSlugs = SingularSlugs.includes(data.slug as PathNames);
+  $: inSingularSlugs = SingularSlugs.includes(data.slug as PathNames);
 </script>
 
 {#if inSingularSlugs}
-    <div class={isMobile ? "" : "flex"}>
-        <div>
-            {#if data.sideBar?.length}
-                <Sidebar links={data.sideBar} />
-            {/if}
-        </div>
-        {#if data}
-            <ProseWrapper>
-                <div>
-                    <h1>{data.title}</h1>
-                    {@html data.content}
-                </div>
-            </ProseWrapper>
-        {/if}
+  <div class={isMobile ? "" : "flex"}>
+    <div>
+      {#if data.sideBar?.length}
+        <Sidebar links={data.sideBar} />
+      {/if}
     </div>
+    {#if data}
+      <ProseWrapper>
+        <div>
+          <h1>{data.title}</h1>
+          {@html data.content}
+        </div>
+      </ProseWrapper>
+    {/if}
+  </div>
 {/if}
 
 {#if data.slug === PathNames.Trainers}
-    <TrainerCards trainers={data.trainers} />
+  <TrainerCards trainers={data.trainers} />
 {/if}
 
 {#if data.slug === PathNames.Gallery}
-    <Gallery galleryData={data.galleryData} />
+  <Gallery galleryData={data.galleryData} />
 {/if}
 
 {#if data.slug === PathNames.Links}
-    <Links links={data.links} />
+  <Links links={data.links} />
 {/if}
 
-{#if data.slug === PathNames.Blackbelts}
-    <ProseWrapper>
-        <BeltTable slug={data.slug} />
-    </ProseWrapper>
+{#if data.slug == PathNames.Blackbelts}
+  <ProseWrapper>
+    <BeltTable slug={data.slug} />
+  </ProseWrapper>
 {/if}
 
 {#if data.slug === PathNames.Posts}
-    <article class="prose mb-5">
-        <h1>Nyhets arkiv</h1>
-    </article>
-    <List slug={data.slug} />
+  <article class="prose mb-5">
+    <h1>Nyhetsarkiv</h1>
+  </article>
+  <List slug={data.slug} />
 {/if}
 
 {#if data.slug === PathNames.Competitions}
-    <article class="prose mb-5">
-        <h1>Konkurranser</h1>
-    </article>
-    <List slug={data.slug} />
+  <article class="prose mb-5">
+    <h1>Konkurranser</h1>
+  </article>
+  <List slug={data.slug} />
 {/if}
