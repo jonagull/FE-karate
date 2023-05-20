@@ -4,7 +4,7 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
-  let hasLatestPosts = false;
+  let hasLatestPosts: boolean = false;
   let latestPostLabel: string;
 
   onMount(() => {
