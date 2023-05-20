@@ -1,6 +1,7 @@
 <script lang="ts">
-  const isMobile = window.innerWidth < 620;
+  // const isMobile = window.innerWidth < 620;
 
+  const isMobile: boolean = true;
   export let hasLatestPosts: boolean;
   export let latestPostLabel: string;
 </script>
