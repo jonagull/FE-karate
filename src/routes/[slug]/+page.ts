@@ -2,8 +2,9 @@ import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
 import { AUTH_TOKEN, BASE_URL } from "$lib/constants/variables";
+import type { PageDataResponse } from "../../interfaces";
 
-let pageData: Lol;
+let pageData: PageDataResponse;
 let sideBarData: string[];
 let mutatedMarkup: string;
 
@@ -23,12 +24,6 @@ export const load = (async ({ params }) => {
 
         return {
             trainers: pageData.data,
-            slug: params.slug,
-        };
-    }
-
-    if (params.slug === PathNames.Blackbelts) {
-        return {
             slug: params.slug,
         };
     }
