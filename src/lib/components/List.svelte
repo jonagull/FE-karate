@@ -71,7 +71,7 @@
         </Table>
 
         {#if listData.meta.pagination.pageCount > 1}
-            <nav class="mt-5 flex flex-col items-center">
+            <nav class="mt-5 mb-20 flex flex-col items-center">
                 <ul class="inline-flex -space-x-px">
                     <li>
                         <!-- svelte-ignore a11y-invalid-attribute -->

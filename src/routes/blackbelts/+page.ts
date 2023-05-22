@@ -12,3 +12,8 @@ export const load = (async () => {
         blackbelts: response.data,
     };
 }) satisfies PageLoad;
+
+// TODO: implement pagination for belts
+// export const _logger = () => {
+//     console.log("lol");
+// };
