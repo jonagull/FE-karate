@@ -4,12 +4,12 @@
     export let galleryData: any;
 </script>
 
-<article class="prose lg:prose-xl">
+<!-- <article class="prose lg:prose-xl">
     <h1>{galleryData.attributes.title}</h1>
     <div>
         {@html galleryData.attributes.text}
     </div>
-</article>
+</article> -->
 
 <div class="container grid grid-cols-3 gap-2 mx-auto">
     {#each galleryData.attributes.image.data as img}
