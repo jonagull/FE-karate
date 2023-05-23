@@ -1,19 +1,28 @@
 import { PathNames } from "$lib/constants/pathNames.enum";
 import { fetchPageData } from "$lib/helpers/api";
+import type { PageLoad } from "./$types";
 
-let pageData: any;
+interface SingularPageData {
+    data: HomeData;
+    meta: any;
+}
+
+interface HomeData {
+    attributes: {
+        text: string;
+        title: string;
+    };
+}
+
 let latestsPosts: any = [];
+let homeData: any;
 
-export const load = async () => {
+export const load = (async () => {
     latestsPosts = await fetchPageData(PathNames.Posts);
-
-    if (!pageData) {
-        return;
-    }
+    homeData = await fetchPageData("home");
 
     return {
-        title: pageData.data.attributes.title,
-        pageData: pageData,
+        homeData: homeData.data,
         latestsPosts: latestsPosts.data
             .filter((x: any) => {
                 if (!x.attributes.archive_date) {
@@ -29,4 +38,4 @@ export const load = async () => {
             })
             .sort((a: any, b: any) => b.id - a.id),
     };
-};
+}) satisfies PageLoad;

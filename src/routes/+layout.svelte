@@ -6,7 +6,7 @@
 
 <Navbar />
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center pb-10">
     <slot />
 </div>
 

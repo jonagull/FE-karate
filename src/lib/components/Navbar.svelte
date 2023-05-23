@@ -14,8 +14,13 @@
 <Navbar let:hidden let:toggle>
     <NavBrand href="/">
         <span
-            class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
+            class="self-center whitespace-nowrap text-xl font-semibold dark:text-white flex"
         >
+            <img
+                src="https://www.pngitem.com/pimgs/m/287-2872556_karate-kick-png-photo-clipart-karate-transparent-png.png"
+                alt="Karate man kicking logo"
+                style="height: 20px;"
+            />
             Sentrum Karateklubb
         </span>
     </NavBrand>
