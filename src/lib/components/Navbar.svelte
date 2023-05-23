@@ -9,6 +9,8 @@
         DropdownItem,
         Chevron,
     } from "flowbite-svelte";
+
+    import KarateMan from "$lib/assets/karateBoi.png";
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -17,11 +19,12 @@
             class="self-center whitespace-nowrap text-xl font-semibold dark:text-white flex"
         >
             <img
-                src="https://www.pngitem.com/pimgs/m/287-2872556_karate-kick-png-photo-clipart-karate-transparent-png.png"
+                src={KarateMan}
                 alt="Karate man kicking logo"
-                style="height: 20px;"
+                style="height: 30px;"
             />
-            Sentrum Karateklubb
+
+            <strong>Sentrum Karateklubb </strong>
         </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
