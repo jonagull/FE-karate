@@ -28,12 +28,17 @@ export const load = (async () => {
         heroData: heroData.data,
         latestsPosts: latestsPosts.data
             .filter((x: any) => {
-                if (!x.attributes.archive_date) {
+                if (!x.attributes.archive_date || !x.attributes.archive_date) {
                     return false;
                 }
 
                 const archiveDate = new Date(x.attributes.archive_date);
+                const publishDate = new Date(x.attributes.publish_date);
                 const today = new Date();
+
+                if (publishDate.getTime() >= today.getTime()) {
+                    return false;
+                }
 
                 if (archiveDate.getTime() >= today.getTime()) {
                     return true;
