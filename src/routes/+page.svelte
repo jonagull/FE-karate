@@ -38,7 +38,7 @@
         <h1 id="siste">{latestPostLabel}</h1>
         {#each data.latestsPosts as p}
             <a class="font-medium hover:underline" href={`/post/${p.id}`}>
-                <h2>{p.attributes.title}</h2>
+                <h4>{p.attributes.title}</h4>
             </a>
         {/each}
     </ProseWrapper>
