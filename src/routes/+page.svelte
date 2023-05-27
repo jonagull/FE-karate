@@ -23,7 +23,7 @@
     });
 </script>
 
-<Hero {hasLatestPosts} {latestPostLabel} />
+<Hero {hasLatestPosts} {latestPostLabel} heroData={data.heroData} />
 
 {#if data.homeData}
     <ProseWrapper>

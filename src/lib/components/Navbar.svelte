@@ -23,7 +23,6 @@
                 alt="Karate man kicking logo"
                 style="height: 30px;"
             />
-
             <strong>Sentrum Karateklubb </strong>
         </span>
     </NavBrand>

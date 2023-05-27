@@ -16,13 +16,16 @@ interface HomeData {
 
 let latestsPosts: any = [];
 let homeData: any;
+let heroData: any;
 
 export const load = (async () => {
     latestsPosts = await fetchPageData(PathNames.Posts);
     homeData = await fetchPageData("home");
+    heroData = await fetchPageData("heroPage", true);
 
     return {
         homeData: homeData.data,
+        heroData: heroData.data,
         latestsPosts: latestsPosts.data
             .filter((x: any) => {
                 if (!x.attributes.archive_date) {
