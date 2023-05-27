@@ -5,15 +5,10 @@ import type { BlackBeltsResponse } from "../../interfaces";
 
 export const load = (async () => {
     const response: BlackBeltsResponse = await fetchPageData(
-        PathNames.Blackbelts
+        PathNames.Blackbelts + "?_limit=-1"
     );
 
     return {
         blackbelts: response.data,
     };
 }) satisfies PageLoad;
-
-// TODO: implement pagination for belts
-// export const _logger = () => {
-//     console.log("lol");
-// };
