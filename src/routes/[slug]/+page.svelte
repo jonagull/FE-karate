@@ -4,7 +4,6 @@
     import List from "$lib/components/List.svelte";
     import TrainerCards from "$lib/components/TrainerCards.svelte";
     import Links from "$lib/components/Links.svelte";
-    import Gallery from "$lib/components/Gallery.svelte";
     import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
     import ProseWrapper from "$lib/components/ProseWrapper.svelte";
     export let data: PageData;
@@ -36,10 +35,6 @@
     <TrainerCards trainers={data.trainers} />
 {/if}
 
-{#if data.slug === PathNames.Gallery}
-    <Gallery galleryData={data.galleryData} />
-{/if}
-
 {#if data.slug === PathNames.Links}
     <Links links={data.links} />
 {/if}
@@ -47,6 +42,13 @@
 {#if data.slug === PathNames.Posts}
     <article class="prose mb-5">
         <h1>Nyhetsarkiv</h1>
+    </article>
+    <List slug={data.slug} />
+{/if}
+
+{#if data.slug === PathNames.Galleries}
+    <article class="prose mb-5">
+        <h1>Bildegalleriet</h1>
     </article>
     <List slug={data.slug} />
 {/if}

@@ -57,7 +57,7 @@
         >
         <Dropdown triggeredBy="#nav-menu3" class="w-44 z-20">
             <DropdownItem href="/links">Linker</DropdownItem>
-            <DropdownItem href="/gallery">Media</DropdownItem>
+            <DropdownItem href="/galleries">Bildegalleriet</DropdownItem>
             <DropdownItem href="/history">Historie</DropdownItem>
         </Dropdown>
     </NavUl>
