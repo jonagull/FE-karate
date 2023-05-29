@@ -13,8 +13,6 @@ export const load = (async ({ params }) => {
     );
     const response: APIResponse = await res.json();
 
-    console.log("response", response);
-
     return {
         id: params.id,
         gallery: response.data[0],
