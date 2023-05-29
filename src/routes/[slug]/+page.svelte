@@ -36,10 +36,6 @@
     <TrainerCards trainers={data.trainers} />
 {/if}
 
-{#if data.slug === PathNames.Gallery}
-    <Gallery galleryData={data.galleryData} />
-{/if}
-
 {#if data.slug === PathNames.Links}
     <Links links={data.links} />
 {/if}
@@ -47,6 +43,13 @@
 {#if data.slug === PathNames.Posts}
     <article class="prose mb-5">
         <h1>Nyhetsarkiv</h1>
+    </article>
+    <List slug={data.slug} />
+{/if}
+
+{#if data.slug === PathNames.Galleries}
+    <article class="prose mb-5">
+        <h1>Bildegalleriet</h1>
     </article>
     <List slug={data.slug} />
 {/if}

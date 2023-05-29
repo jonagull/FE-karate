@@ -8,7 +8,7 @@ export enum PathNames {
     Posts = "posts",
     Trainers = "trainers",
     Links = "links",
-    Gallery = "gallery",
+    Galleries = "galleries",
     History = "history",
     Encyclopedia = "encyclopedia",
     Rating = "rating",
@@ -33,4 +33,5 @@ export const CollectionSlugs = [
     PathNames.Blackbelts,
     PathNames.Boardmembers,
     PathNames.Competitions,
+    PathNames.Galleries,
 ];

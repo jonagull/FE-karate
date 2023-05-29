@@ -52,11 +52,8 @@ export const load = (async ({ params }) => {
         };
     }
 
-    if (params.slug === PathNames.Gallery) {
-        await fetchPageData(params.slug, true);
-
+    if (params.slug === PathNames.Galleries) {
         return {
-            galleryData: pageData.data,
             slug: params.slug,
         };
     }

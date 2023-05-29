@@ -11,6 +11,7 @@
         TableHeadCell,
     } from "flowbite-svelte";
     import { fetchPageData } from "$lib/helpers/api";
+    import { PathNames } from "$lib/constants/pathNames.enum";
 
     let listData: any;
     export let slug: string;
@@ -21,9 +22,7 @@
         }
 
         const res = await fetch(
-            `${BASE_URL}/api/${
-                hasPosts ? "posts" : "competitions"
-            }?pagination[page]=${page}`,
+            `${BASE_URL}/api/${listPaths[slug]}?pagination[page]=${page}`,
             {
                 headers: {
                     Authorization: `Bearer ${AUTH_TOKEN}`,
@@ -37,7 +36,11 @@
         listData = await fetchPageData(slug);
     });
 
-    const hasPosts = slug === "posts";
+    const listPaths: { [key: string]: string } = {
+        [PathNames.Galleries]: "gallery",
+        [PathNames.Posts]: "post",
+        [PathNames.Competitions]: "competition",
+    };
 </script>
 
 {#if listData && listData.data && listData.data.length > 0}
@@ -54,9 +57,7 @@
                         <TableBodyCell>
                             <a
                                 class="font-medium text-blue-600 hover:underline"
-                                href={hasPosts
-                                    ? `/post/${p.id}`
-                                    : `/competition/${p.id}`}>Les</a
+                                href={`/${listPaths[slug]}/${p.id}`}>Se</a
                             >
                         </TableBodyCell>
                         <TableBodyCell>{p.attributes.title}</TableBodyCell>
