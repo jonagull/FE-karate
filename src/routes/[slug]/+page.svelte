@@ -4,7 +4,6 @@
     import List from "$lib/components/List.svelte";
     import TrainerCards from "$lib/components/TrainerCards.svelte";
     import Links from "$lib/components/Links.svelte";
-    import Gallery from "$lib/components/Gallery.svelte";
     import { PathNames, SingularSlugs } from "$lib/constants/pathNames.enum";
     import ProseWrapper from "$lib/components/ProseWrapper.svelte";
     export let data: PageData;
