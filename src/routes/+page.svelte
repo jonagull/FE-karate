@@ -2,7 +2,6 @@
     import Hero from "$lib/components/Hero.svelte";
     import { onMount } from "svelte";
     import type { PageData } from "./$types";
-    import { fetchPageData } from "$lib/helpers/api";
     import ProseWrapper from "$lib/components/ProseWrapper.svelte";
 
     export let data: PageData;
