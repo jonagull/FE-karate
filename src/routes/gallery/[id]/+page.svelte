@@ -2,7 +2,6 @@
   import ProseWrapper from "$lib/components/ProseWrapper.svelte";
   import { BASE_URL } from "$lib/constants/variables";
   import type { PageData } from "./$types";
-  import { Carousel } from "flowbite-svelte";
 
   export let data: PageData;
 
@@ -27,7 +26,6 @@
       selectedImageIndex = 1;
       return;
     }
-
     selectedImageIndex += 1;
   };
 
@@ -36,7 +34,6 @@
       selectedImageIndex = imageArray.length;
       return;
     }
-
     selectedImageIndex -= 1;
   };
 
@@ -75,8 +72,6 @@
       {/each}
     {/if}
   </div>
-
-  <!-- <button on:click={() => (open = !open)}>open me</button> -->
 
   <button on:click={() => dialog.showModal()}>Open It!</button>
 
