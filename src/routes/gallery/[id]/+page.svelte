@@ -81,7 +81,7 @@
         src={imageArray.find((x) => x.id === selectedImageIndex)?.imageUrl}
         alt=""
       />
-      <button on:click={() => (open = !open)}>Close</button>
+      <button on:click={() => dialog.close()}>Close</button>
       <button on:click={() => nextImage()}>Next</button>
       <button on:click={() => previousImage()}>Previous</button>
     </div>
