@@ -2,10 +2,12 @@
   import ProseWrapper from "$lib/components/ProseWrapper.svelte";
   import { BASE_URL } from "$lib/constants/variables";
   import type { PageData } from "./$types";
+  import ChevronRight from "$lib/assets/chevron_right.png";
+  import ChevronCross from "$lib/assets/transparentX.png";
+  import ChevronLeft from "$lib/assets/chevron_left.png";
 
   export let data: PageData;
 
-  let open = false;
   let selectedImageIndex: number;
   let dialog: any;
 
@@ -17,33 +19,31 @@
   }));
 
   const openImagePreviewer = (index: number): void => {
-    selectedImageIndex = index + 1;
+    selectedImageIndex = index;
     dialog.showModal();
   };
 
   const nextImage = () => {
-    if (imageArray.length === selectedImageIndex) {
-      selectedImageIndex = 1;
+    if (imageArray.length === selectedImageIndex + 1) {
+      selectedImageIndex = 0;
       return;
     }
     selectedImageIndex += 1;
   };
 
   const previousImage = () => {
-    if (selectedImageIndex === 1) {
-      selectedImageIndex = imageArray.length;
+    if (selectedImageIndex === 0) {
+      selectedImageIndex = imageArray.length - 1;
       return;
     }
     selectedImageIndex -= 1;
   };
 
-  window.addEventListener("keydown", function (event) {
+  window.addEventListener("keydown", function (event): void {
     if (event.key === "ArrowRight") {
       nextImage();
     }
-  });
 
-  window.addEventListener("keydown", function (event) {
     if (event.key === "ArrowLeft") {
       previousImage();
     }
@@ -73,30 +73,62 @@
     {/if}
   </div>
 
-  <button on:click={() => dialog.showModal()}>Open It!</button>
-
   <dialog bind:this={dialog} on:close>
-    <div class="carousel-container">
+    <button
+      style="display: flex; justify-content: flex-end; width: 100%;"
+      on:click={() => dialog.close()}
+    >
+      <img class="chevron" src={ChevronCross} alt="" />
+    </button>
+
+    <div class="action-container">
+      <button class="chevron" on:click={() => previousImage()}>
+        <img src={ChevronLeft} alt="" />
+      </button>
+
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <img
-        src={imageArray.find((x) => x.id === selectedImageIndex)?.imageUrl}
+        on:click={() => nextImage()}
+        class="image-container"
+        src={imageArray[selectedImageIndex]?.imageUrl}
         alt=""
       />
-      <button on:click={() => dialog.close()}>Close</button>
-      <button on:click={() => nextImage()}>Next</button>
-      <button on:click={() => previousImage()}>Previous</button>
+
+      <button class="chevron" on:click={() => nextImage()}>
+        <img src={ChevronRight} alt="" /></button
+      >
     </div>
   </dialog>
 {/if}
 
 <style>
-  .carousel-container {
-    border: 1px solid black;
-    padding: 10px;
-    height: 100vh;
-    /* width: 60%; */
-    margin-right: auto;
-    margin-left: auto;
+  .image-container {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-container:hover {
+    cursor: pointer;
+  }
+
+  .chevron {
+    width: 40px;
+  }
+
+  .chevron:hover {
+    scale: 1.2;
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: center;
     backdrop-filter: blur(5px);
+  }
+
+  dialog::content {
+    width: 80%;
+    background: blur(5px);
   }
 
   dialog::backdrop {
