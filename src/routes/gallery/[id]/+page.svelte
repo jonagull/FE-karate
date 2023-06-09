@@ -5,6 +5,8 @@
   import ChevronRight from "$lib/assets/chevron_right.png";
   import ChevronCross from "$lib/assets/transparentX.png";
   import ChevronLeft from "$lib/assets/chevron_left.png";
+  import ForwardArrow from "$lib/assets/forward.png";
+  import GoBackArrow from "$lib/assets/goBack.png";
 
   export let data: PageData;
 
