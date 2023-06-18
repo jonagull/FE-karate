@@ -55,7 +55,7 @@
 
 {#if data.slug === PathNames.Competitions}
     <article class="prose mb-5">
-        <h1>Konkurranser</h1>
+        <h1>Resultater</h1>
     </article>
     <List slug={data.slug} />
 {/if}

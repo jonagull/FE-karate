@@ -16,6 +16,14 @@ export enum PathNames {
     Kihon = "kihon",
 }
 
+export enum PicsPaths {
+    OwnCollections = "bilder-egne-samlingers",
+    OurClub = "our-clubs",
+    ProfilesAndHistory = "profile-histories",
+    TripsAndCompetitions = "trips-competitions",
+    TripsAndCollection = "trip-collections",
+}
+
 export const SingularSlugs = [
     PathNames.Home,
     PathNames.Training,

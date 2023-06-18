@@ -1,13 +1,17 @@
 <script lang="ts">
-    export let links: string[] = [];
+    export let links: any[];
+    export let routing: boolean = false;
 </script>
 
-{#if links}
+{#if links?.length}
     <div class="sidebar__wrapper">
         {#each links as link}
             <li>
-                <a class="hover-underline-animation" href={"#" + link}>
-                    {link}
+                <a
+                    class="hover-underline-animation"
+                    href={!routing ? "#" + link : link.link}
+                >
+                    {!routing ? link : link.name}
                 </a>
             </li>
         {/each}

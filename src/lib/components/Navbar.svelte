@@ -31,7 +31,7 @@
         <NavLi href="/training">Treningstider</NavLi>
         <NavLi href="/posts">Nyheter</NavLi>
         <NavLi href="/competitions">Resultater</NavLi>
-        <NavLi href="/pics">Bilder</NavLi>
+        <NavLi href="/pics">Bildearkiv</NavLi>
 
         <NavLi id="nav-menu1" class="cursor-pointer"
             ><Chevron aligned>Karate</Chevron></NavLi
@@ -57,7 +57,7 @@
         >
         <Dropdown triggeredBy="#nav-menu3" class="w-44 z-20">
             <DropdownItem href="/links">Linker</DropdownItem>
-            <DropdownItem href="/galleries">Bildegalleriet</DropdownItem>
+            <!-- <DropdownItem href="/galleries">Bildegalleriet</DropdownItem> -->
             <DropdownItem href="/history">Historie</DropdownItem>
         </Dropdown>
     </NavUl>

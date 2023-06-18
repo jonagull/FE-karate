@@ -11,15 +11,20 @@
         TableHeadCell,
     } from "flowbite-svelte";
     import { fetchPageData } from "$lib/helpers/api";
-    import { PathNames } from "$lib/constants/pathNames.enum";
+    import { PathNames, PicsPaths } from "$lib/constants/pathNames.enum";
 
-    let listData: any;
+    export let listData: any = [];
     export let slug: string;
 
     const listPaths: { [key: string]: string } = {
         [PathNames.Galleries]: "gallery",
         [PathNames.Posts]: "post",
         [PathNames.Competitions]: "competition",
+        [PicsPaths.OwnCollections]: "pics/bilder-egne-samlingers",
+        [PicsPaths.OurClub]: "pics/our-clubs",
+        [PicsPaths.ProfilesAndHistory]: "pics/profile-histories",
+        [PicsPaths.TripsAndCompetitions]: "pics/trips-competitions",
+        [PicsPaths.TripsAndCollection]: "pics/trip-collections",
     };
 
     const paginationFetch = async (page: any) => {
@@ -39,7 +44,9 @@
     };
 
     onMount(async () => {
-        listData = await fetchPageData(slug);
+        if (!listData.length) {
+            listData = await fetchPageData(slug);
+        }
     });
 </script>
 
