@@ -22,10 +22,8 @@
         </div>
         {#if data}
             <ProseWrapper>
-                <div>
-                    <h1>{data.title}</h1>
-                    {@html data.content}
-                </div>
+                <h1>{data.title}</h1>
+                {@html data.content}
             </ProseWrapper>
         {/if}
     </div>
