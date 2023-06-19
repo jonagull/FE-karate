@@ -12,16 +12,15 @@ export default {
                 DEFAULT: {
                     css: {
                         p: {
-                            margin: "0px",
                             marginTop: "0px",
                             marginBottom: "0px",
                         },
                         table: {
                             "& td:first-child": {
-                                paddingLeft: "5px",
+                                paddingLeft: "0.6rem",
                             },
                             "& td:last-child": {
-                                paddingRight: "5px",
+                                paddingRight: "0.6rem",
                             },
                         },
                     },
@@ -30,6 +29,11 @@ export default {
                     css: {
                         p: {
                             margin: "0px",
+                            marginTop: "0px",
+                            marginBottom: "0px",
+                            fontSize: "1rem",
+                        },
+                        li: {
                             marginTop: "0px",
                             marginBottom: "0px",
                         },
@@ -60,8 +64,23 @@ export default {
         },
     },
 
-    plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],
+    plugins: [
+        require("@tailwindcss/typography"),
+        require("flowbite/plugin"),
+        require("daisyui"),
+    ],
     // plugins: [require("@tailwindcss/typography")],
 
     darkMode: "class",
+
+    daisyui: {
+        styled: true,
+        themes: false,
+        base: true,
+        utils: true,
+        logs: true,
+        rtl: false,
+        prefix: "",
+        darkTheme: "dark",
+    },
 };
