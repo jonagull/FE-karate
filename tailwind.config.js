@@ -16,6 +16,14 @@ export default {
                             marginTop: "0px",
                             marginBottom: "0px",
                         },
+                        table: {
+                            "& td:first-child": {
+                                paddingLeft: "5px",
+                            },
+                            "& td:last-child": {
+                                paddingRight: "5px",
+                            },
+                        },
                     },
                 },
                 xl: {
