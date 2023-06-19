@@ -17,6 +17,7 @@ export enum PathNames {
 }
 
 export enum PicsPaths {
+    OwnCompetitions = "egne-konkurransers",
     OwnCollections = "bilder-egne-samlingers",
     OurClub = "our-clubs",
     ProfilesAndHistory = "profile-histories",

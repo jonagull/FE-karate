@@ -60,7 +60,7 @@
             </div>
         </ProseWrapper>
 
-        <div class="container grid grid-cols-3 gap-2 mx-auto">
+        <div class="container grid grid-cols-2 gap-2 mx-auto">
             {#if data.gallery.attributes.pics.data}
                 {#each data.gallery.attributes.pics.data as pic, i}
                     <div class="w-full rounded">
@@ -68,6 +68,7 @@
                         <img
                             src={BASE_URL + pic.attributes.url}
                             alt=""
+                            style="max-width: 300px;"
                             on:click={() => openImagePreviewer(i)}
                         />
                     </div>

@@ -4,6 +4,7 @@
     const isMobile = window.innerWidth < 620;
 
     let sideBarContent: any[] = [
+        { name: "Egne konkurranser", link: "/pics/egne-konkurransers" },
         { name: "Egne samlinger", link: "/pics/bilder-egne-samlingers" },
         { name: "Klubben vår", link: "/pics/our-clubs" },
         { name: "Profiler/Historie", link: "/pics/profile-histories" },
