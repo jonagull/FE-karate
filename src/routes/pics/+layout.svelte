@@ -13,11 +13,13 @@
     ];
 </script>
 
-<div class={isMobile ? "" : "flex"}>
-    <div>
-        {#if sideBarContent?.length}
+<div class={isMobile ? "" : "grid grid-cols-4 gap-4"}>
+    {#if sideBarContent?.length}
+        <div class="col-span-1">
             <Sidebar links={sideBarContent} routing />
-        {/if}
+        </div>
+    {/if}
+    <div class="col-span-3">
+        <slot />
     </div>
-    <slot />
 </div>

@@ -120,10 +120,6 @@
         width: 40px;
     }
 
-    .chevron:hover {
-        scale: 1.2;
-    }
-
     .action-container {
         display: flex;
         justify-content: center;
