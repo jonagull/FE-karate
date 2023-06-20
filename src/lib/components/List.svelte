@@ -71,7 +71,9 @@
                         <TableBodyCell>{p.attributes.title}</TableBodyCell>
                         <TableBodyCell
                             >{formatDate(
-                                p.attributes.createdAt || ""
+                                p.attributes.publish_date ||
+                                    p.attributes.createdAt ||
+                                    ""
                             )}</TableBodyCell
                         >
                     </TableBodyRow>
