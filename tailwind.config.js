@@ -39,6 +39,48 @@ export default {
                         },
                     },
                 },
+                lg: {
+                    css: {
+                        p: {
+                            margin: "0px",
+                            marginTop: "0px",
+                            marginBottom: "0px",
+                            fontSize: "1rem",
+                        },
+                        li: {
+                            marginTop: "0px",
+                            marginBottom: "0px",
+                        },
+                    },
+                },
+                sm: {
+                    css: {
+                        p: {
+                            margin: "0px",
+                            marginTop: "0px",
+                            marginBottom: "0px",
+                            fontSize: "1rem",
+                        },
+                        li: {
+                            marginTop: "0px",
+                            marginBottom: "0px",
+                        },
+                    },
+                },
+                lg: {
+                    css: {
+                        p: {
+                            margin: "0px",
+                            marginTop: "0px",
+                            marginBottom: "0px",
+                            fontSize: "1rem",
+                        },
+                        li: {
+                            marginTop: "0px",
+                            marginBottom: "0px",
+                        },
+                    },
+                },
             },
             screens: {
                 sm: "640px",
