@@ -44,6 +44,26 @@
         listData = await res.json();
     };
 
+    // TRY THIS AFTER YOU'VE DONE THE ABOVE
+    // const paginationFetch = async (page: any) => {
+    //     if (page === 0 || page > listData.meta.pagination.pageCount) {
+    //         return;
+    //     }
+
+    //     const sortBy = "publish_date:desc";
+
+    //     const apiUrl = `${BASE_URL}/api/${listPaths[slug]}?pagination[page]=${page}&sort=${sortBy}`;
+
+    //     // Make your API call using the updated apiUrl
+
+    //     const res = await fetch(apiUrl, {
+    //         headers: {
+    //             Authorization: `Bearer ${AUTH_TOKEN}`,
+    //         },
+    //     });
+    //     listData = await res.json();
+    // };
+
     onMount(async () => {
         if (!listData.length) {
             listData = await fetchPageData(slug);

@@ -57,14 +57,3 @@
     </article>
     <List slug={data.slug} />
 {/if}
-
-<style>
-    .table-responsive {
-        overflow-x: auto;
-        max-width: 100%;
-    }
-    .table-responsive table {
-        width: 100%;
-        max-width: 100%;
-    }
-</style>

@@ -13,9 +13,7 @@
 
     let imageArray = data.gallery.attributes.pics.data.map((x) => ({
         id: x.id,
-        name: "lol",
         imageUrl: BASE_URL + x.attributes.url,
-        attribution: "mark-harpur-K2s_YE031CA-unsplash",
     }));
 
     const openImagePreviewer = (index: number): void => {
