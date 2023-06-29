@@ -10,6 +10,7 @@
         { name: "Profiler/Historie", link: "/pics/profile-histories" },
         { name: "Turer/Konkurranser", link: "/pics/trips-competitions" },
         { name: "Turer/Samlinger", link: "/pics/trip-collections" },
+        { name: "Filmer", link: "/pics/bilder-filmers" },
     ];
 </script>
 

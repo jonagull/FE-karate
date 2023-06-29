@@ -26,6 +26,7 @@
         [PicsPaths.TripsAndCompetitions]: "pics/trips-competitions",
         [PicsPaths.TripsAndCollection]: "pics/trip-collections",
         [PicsPaths.OwnCompetitions]: "pics/egne-konkurransers",
+        [PicsPaths.Films]: "pics/bilder-filmers",
     };
 
     const paginationFetch = async (page: any) => {

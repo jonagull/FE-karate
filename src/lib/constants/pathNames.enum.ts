@@ -23,6 +23,7 @@ export enum PicsPaths {
     ProfilesAndHistory = "profile-histories",
     TripsAndCompetitions = "trips-competitions",
     TripsAndCollection = "trip-collections",
+    Films = "bilder-filmers",
 }
 
 export const SingularSlugs = [

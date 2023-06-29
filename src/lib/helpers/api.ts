@@ -1,7 +1,17 @@
-import { PathNames } from "$lib/constants/pathNames.enum";
+import { PathNames, PicsPaths } from "$lib/constants/pathNames.enum";
 import { AUTH_TOKEN, BASE_URL } from "$lib/constants/variables";
 
-const sortedEndpoints = [PathNames.Competitions, PathNames.Posts];
+const sortedEndpoints = [
+    PathNames.Competitions,
+    PathNames.Posts,
+    PicsPaths.OurClub,
+    PicsPaths.TripsAndCompetitions,
+    PicsPaths.TripsAndCollection,
+    PicsPaths.OwnCompetitions,
+    PicsPaths.OwnCollections,
+    PicsPaths.ProfilesAndHistory,
+    PicsPaths.Films,
+];
 
 export const fetchPageData = async (endpoint: string, withImgs = false) => {
     const res = await fetch(
