@@ -18,8 +18,8 @@
 
     const listPaths: { [key: string]: string } = {
         [PathNames.Galleries]: "gallery",
-        [PathNames.Posts]: "post",
-        [PathNames.Competitions]: "competition",
+        [PathNames.Posts]: "posts",
+        [PathNames.Competitions]: "competitions",
         [PicsPaths.OwnCollections]: "pics/bilder-egne-samlingers",
         [PicsPaths.OurClub]: "pics/our-clubs",
         [PicsPaths.ProfilesAndHistory]: "pics/profile-histories",
@@ -35,7 +35,7 @@
         }
 
         const res = await fetch(
-            `${BASE_URL}/api/${listPaths[slug]}?pagination[page]=${page}`,
+            `${BASE_URL}/api/${listPaths[slug]}?pagination[page]=${page}&sort=publish_date:desc`,
             {
                 headers: {
                     Authorization: `Bearer ${AUTH_TOKEN}`,
@@ -44,26 +44,6 @@
         );
         listData = await res.json();
     };
-
-    // TRY THIS AFTER YOU'VE DONE THE ABOVE
-    // const paginationFetch = async (page: any) => {
-    //     if (page === 0 || page > listData.meta.pagination.pageCount) {
-    //         return;
-    //     }
-
-    //     const sortBy = "publish_date:desc";
-
-    //     const apiUrl = `${BASE_URL}/api/${listPaths[slug]}?pagination[page]=${page}&sort=${sortBy}`;
-
-    //     // Make your API call using the updated apiUrl
-
-    //     const res = await fetch(apiUrl, {
-    //         headers: {
-    //             Authorization: `Bearer ${AUTH_TOKEN}`,
-    //         },
-    //     });
-    //     listData = await res.json();
-    // };
 
     onMount(async () => {
         if (!listData.length) {
