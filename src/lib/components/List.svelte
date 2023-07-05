@@ -18,15 +18,15 @@
 
     const listPaths: { [key: string]: string } = {
         [PathNames.Galleries]: "gallery",
-        [PathNames.Posts]: "posts",
-        [PathNames.Competitions]: "competitions",
-        [PicsPaths.OwnCollections]: "pics/bilder-egne-samlingers",
+        [PathNames.Posts]: "post",
+        [PathNames.Competitions]: "competition",
+        [PicsPaths.OwnCollections]: "pics/bilder-egne-samlinger",
         [PicsPaths.OurClub]: "pics/our-clubs",
-        [PicsPaths.ProfilesAndHistory]: "pics/profile-histories",
-        [PicsPaths.TripsAndCompetitions]: "pics/trips-competitions",
-        [PicsPaths.TripsAndCollection]: "pics/trip-collections",
-        [PicsPaths.OwnCompetitions]: "pics/egne-konkurransers",
-        [PicsPaths.Films]: "pics/bilder-filmers",
+        [PicsPaths.ProfilesAndHistory]: "pics/profile-historie",
+        [PicsPaths.TripsAndCompetitions]: "pics/trips-competition",
+        [PicsPaths.TripsAndCollection]: "pics/trip-collection",
+        [PicsPaths.OwnCompetitions]: "pics/egne-konkurranser",
+        [PicsPaths.Films]: "pics/bilder-filmer",
     };
 
     const paginationFetch = async (page: any) => {
@@ -35,7 +35,7 @@
         }
 
         const res = await fetch(
-            `${BASE_URL}/api/${listPaths[slug]}?pagination[page]=${page}&sort=publish_date:desc`,
+            `${BASE_URL}/api/${slug}?pagination[page]=${page}&sort=publish_date:desc&pagination[pageSize]=10`,
             {
                 headers: {
                     Authorization: `Bearer ${AUTH_TOKEN}`,

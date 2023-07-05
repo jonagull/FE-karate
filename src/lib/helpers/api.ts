@@ -17,7 +17,7 @@ export const fetchPageData = async (endpoint: string, withImgs = false) => {
     const res = await fetch(
         `${BASE_URL}/api/${
             sortedEndpoints.includes(endpoint as PathNames)
-                ? endpoint + "?sort=publish_date:desc"
+                ? endpoint + "?sort=publish_date:desc&pagination[pageSize]=10"
                 : endpoint
         }${withImgs ? "?populate=*" : ""}`,
         {
