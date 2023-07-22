@@ -13,9 +13,8 @@
 
     let imageArray = data.gallery.attributes.pics.data.map((x) => ({
         id: x.id,
-        name: "lol",
         imageUrl: BASE_URL + x.attributes.url,
-        attribution: "mark-harpur-K2s_YE031CA-unsplash",
+        fileName: x.attributes.name,
     }));
 
     const openImagePreviewer = (index: number): void => {
@@ -92,12 +91,16 @@
             </button>
 
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <img
-                on:click={() => nextImage()}
-                class="image-container"
-                src={imageArray[selectedImageIndex]?.imageUrl}
-                alt=""
-            />
+            <div class="flex flex-col items-center">
+                <img
+                    on:click={() => nextImage()}
+                    class="image-container"
+                    src={imageArray[selectedImageIndex]?.imageUrl}
+                    alt=""
+                />
+
+                <p>{imageArray[selectedImageIndex]?.fileName}</p>
+            </div>
 
             <button class="chevron" on:click={() => nextImage()}>
                 <img src={ChevronRight} alt="" /></button
