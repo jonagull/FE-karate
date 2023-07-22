@@ -11,6 +11,7 @@ let mutatedMarkup: string;
 export const load = (async ({ params }) => {
     if (SingularSlugs.includes(params.slug as PathNames)) {
         await fetchPageData(params.slug);
+
         return {
             title: pageData.data.attributes.title,
             content: mutatedMarkup,
@@ -70,6 +71,7 @@ const fetchPageData = async (endpoint: string, withImgs = false) => {
             },
         }
     );
+
     pageData = await res.json();
 
     if (SingularSlugs.includes(endpoint as PathNames)) {

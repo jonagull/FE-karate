@@ -76,6 +76,8 @@
         </div>
     </div>
 
+    <!--  TODO: Add check when looping over images or content, it breakes if BE returns no content -->
+
     <dialog bind:this={dialog} on:close>
         <button
             style="display: flex; justify-content: flex-end; width: 100%;"

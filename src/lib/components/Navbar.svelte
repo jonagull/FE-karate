@@ -70,8 +70,8 @@
         >
         <Dropdown triggeredBy="#nav-menu2" class="w-44 z-20">
             <DropdownItem
-                href="/blackbelts"
-                active={$page.url.pathname === "/blackbelts"}
+                href="/sortebelter"
+                active={$page.url.pathname === "/sortebelter"}
                 >Sortbelter</DropdownItem
             >
             <DropdownItem
@@ -93,7 +93,6 @@
             <DropdownItem href="/links" active={$page.url.pathname === "/links"}
                 >Linker</DropdownItem
             >
-            <!-- <DropdownItem href="/galleries">Bildegalleriet</DropdownItem> -->
             <DropdownItem
                 href="/history"
                 active={$page.url.pathname === "/history"}
