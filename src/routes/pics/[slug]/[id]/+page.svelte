@@ -5,7 +5,6 @@
     import ChevronRight from "$lib/assets/chevron_right.png";
     import ChevronCross from "$lib/assets/transparentX.png";
     import ChevronLeft from "$lib/assets/chevron_left.png";
-    import { disableScrollHandling } from "$app/navigation";
 
     export let data: PageData;
 

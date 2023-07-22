@@ -20,13 +20,13 @@
         [PathNames.Galleries]: "gallery",
         [PathNames.Posts]: "post",
         [PathNames.Competitions]: "competition",
-        [PicsPaths.OwnCollections]: "pics/bilder-egne-samlinger",
+        [PicsPaths.OwnCollections]: "pics/bilder-egne-samlingers",
         [PicsPaths.OurClub]: "pics/our-clubs",
-        [PicsPaths.ProfilesAndHistory]: "pics/profile-historie",
-        [PicsPaths.TripsAndCompetitions]: "pics/trips-competition",
-        [PicsPaths.TripsAndCollection]: "pics/trip-collection",
-        [PicsPaths.OwnCompetitions]: "pics/egne-konkurranser",
-        [PicsPaths.Films]: "pics/bilder-filmer",
+        [PicsPaths.ProfilesAndHistory]: "pics/profile-histories",
+        [PicsPaths.TripsAndCompetitions]: "pics/trips-competitions",
+        [PicsPaths.TripsAndCollection]: "pics/trip-collections",
+        [PicsPaths.OwnCompetitions]: "pics/egne-konkurransers",
+        [PicsPaths.Films]: "pics/bilder-filmers",
     };
 
     const paginationFetch = async (page: any) => {
