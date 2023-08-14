@@ -32,6 +32,9 @@
         <NavLi href="/training" active={$page.url.pathname === "/training"}
             >Treningstider</NavLi
         >
+        <NavLi href="/calendar" active={$page.url.pathname === "/calendar"}
+            >Kalender</NavLi
+        >
         <NavLi href="/posts" active={$page.url.pathname === "/posts"}
             >Nyheter</NavLi
         >

@@ -14,6 +14,7 @@ export enum PathNames {
     Rating = "rating",
     Kata = "kata",
     Kihon = "kihon",
+    Calendar = "calendar",
 }
 
 export enum PicsPaths {
@@ -37,6 +38,7 @@ export const SingularSlugs = [
     PathNames.Rating,
     PathNames.Encyclopedia,
     PathNames.Blackbelts,
+    PathNames.Calendar,
 ];
 
 export const CollectionSlugs = [
